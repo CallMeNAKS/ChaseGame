@@ -1,25 +1,29 @@
 ﻿using System;
 using CodeBase.Input;
+using CodeBase.Player;
 using UnityEngine;
 
 namespace CodeBase.Infrastructure
 {
     public class EntryPoint : MonoBehaviour
     {
-        private KeyboardInput _keyboardInput;
+        [SerializeField] private PlayerMover _playerMover;
         
-        public event Action Updated;
+        private KeyboardInput _keyboardInput;   
 
         private void Awake()
         {
-            _keyboardInput = new KeyboardInput(Updated);
+            _keyboardInput = new KeyboardInput();
+        }
+
+        private void Start()
+        {
+            _playerMover.SetInput(_keyboardInput);
         }
 
         private void Update()
         {
-            Updated?.Invoke();
-            
-            
+            _keyboardInput.UpdateLocal();
         }
     }
 }
