@@ -9,7 +9,6 @@ namespace CodeBase.Input
 
         public void UpdateLocal()
         {
-            Debug.Log("Update Input");
             Direction = new Vector2(UnityEngine.Input.GetAxis("Horizontal"), UnityEngine.Input.GetAxis("Vertical"));
         }
     }
