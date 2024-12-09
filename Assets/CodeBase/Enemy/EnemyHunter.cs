@@ -6,13 +6,14 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class EnemyHunter : MonoBehaviour
 {
-    [Header("Debug")]
-    [SerializeField] private int _damage = 5;
+    [Header("Debug")] [SerializeField] private int _damage = 5;
     [SerializeField] private Transform _playerTransform;
     private Coroutine _periodicDamageCoroutine;
     private NavMeshAgent _navMeshAgent;
     private Collider _playerCollider;
-    
+    [SerializeField]
+    private bool _isCatching = true;
+
 
     private void Awake()
     {
@@ -21,7 +22,32 @@ public class EnemyHunter : MonoBehaviour
 
     private void Update()
     {
+        Move();
+    }
+
+    private void Move()
+    {
+        if (_isCatching)
+        {
+            RunOnPlayer();
+        }
+        else
+        {
+            RunAwayFromPlayer();
+        }
+    }
+
+    private void RunOnPlayer()
+    {
+        _navMeshAgent.ResetPath();
         _navMeshAgent.SetDestination(_playerTransform.position);
+    }
+
+    private void RunAwayFromPlayer()
+    {
+        _navMeshAgent.ResetPath();
+        var direction = transform.position - _playerTransform.position;
+        _navMeshAgent.Move(direction * Time.deltaTime);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -49,5 +75,10 @@ public class EnemyHunter : MonoBehaviour
             playerHealth.TakeDamage(_damage);
             yield return new WaitForSeconds(.5f);
         }
+    }
+
+    public void ToggleCatching()
+    {
+        _isCatching = !_isCatching;
     }
 }
