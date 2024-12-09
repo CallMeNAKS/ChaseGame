@@ -5,6 +5,7 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class EnemyHunter : MonoBehaviour, ITeamable
 {
+    [SerializeField] private AttackBehavior _attackBehavior;
     [SerializeField] private Transform _playerTransform;
     private NavMeshAgent _navMeshAgent;
     private bool _isCatching = true;
@@ -47,8 +48,9 @@ public class EnemyHunter : MonoBehaviour, ITeamable
         _navMeshAgent.Move(direction * Time.deltaTime);
     }
 
-    public void ToggleCatching()
+    public void ToggleState()
     {
         _isCatching = !_isCatching;
+        _attackBehavior.enabled = !_attackBehavior.enabled;
     }
 }
