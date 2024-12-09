@@ -1,5 +1,4 @@
-﻿using System;
-using CodeBase.Input;
+﻿using CodeBase.Input;
 using UnityEngine;
 
 namespace CodeBase.Player
