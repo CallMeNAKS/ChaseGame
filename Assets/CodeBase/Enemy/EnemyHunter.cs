@@ -1,18 +1,17 @@
-using System.Collections;
-using CodeBase;
+using CodeBase.Generics;
 using UnityEngine;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(NavMeshAgent))]
-public class EnemyHunter : MonoBehaviour
+public class EnemyHunter : MonoBehaviour, ITeamable
 {
-    [Header("Debug")]
-    [SerializeField] private int _damage = 5;
+    [SerializeField] private AttackBehavior _attackBehavior;
     [SerializeField] private Transform _playerTransform;
-    private Coroutine _periodicDamageCoroutine;
     private NavMeshAgent _navMeshAgent;
-    private Collider _playerCollider;
-    
+    private bool _isCatching = true;
+
+    [field: SerializeField] public Team Team { get; private set; }
+
 
     private void Awake()
     {
@@ -21,33 +20,37 @@ public class EnemyHunter : MonoBehaviour
 
     private void Update()
     {
+        Move();
+    }
+
+    private void Move()
+    {
+        if (_isCatching)
+        {
+            RunOnPlayer();
+        }
+        else
+        {
+            RunAwayFromPlayer();
+        }
+    }
+
+    private void RunOnPlayer()
+    {
+        _navMeshAgent.ResetPath();
         _navMeshAgent.SetDestination(_playerTransform.position);
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void RunAwayFromPlayer()
     {
-        if (other.CompareTag("Player") && other.TryGetComponent<Health>(out var playerHealth))
-        {
-            _playerCollider = other;
-            _periodicDamageCoroutine = StartCoroutine(PeriodicDamage(playerHealth));
-        }
+        _navMeshAgent.ResetPath();
+        var direction = transform.position - _playerTransform.position;
+        _navMeshAgent.Move(direction * Time.deltaTime);
     }
 
-    private void OnTriggerExit(Collider other)
+    public void ToggleState()
     {
-        if (_playerCollider == other)
-        {
-            StopCoroutine(_periodicDamageCoroutine);
-            _periodicDamageCoroutine = null;
-        }
-    }
-
-    private IEnumerator PeriodicDamage(Health playerHealth)
-    {
-        while (true)
-        {
-            playerHealth.TakeDamage(_damage);
-            yield return new WaitForSeconds(.5f);
-        }
+        _isCatching = !_isCatching;
+        _attackBehavior.enabled = !_attackBehavior.enabled;
     }
 }
