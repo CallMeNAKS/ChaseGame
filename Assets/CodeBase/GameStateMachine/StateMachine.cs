@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace CodeBase
+namespace CodeBase.GameStateMachine
 {
     public enum StateType
     {
@@ -9,22 +9,22 @@ namespace CodeBase
         CatchOut
     }
 
-    public class FSM
+    public class StateMachine
     {
-        private FSMState CurrentState { get; set; }
-        private Dictionary<StateType, FSMState> _states;
+        private IGameState CurrentState { get; set; }
+        private readonly Dictionary<StateType, IGameState> _states;
 
 
-        public FSM() => _states = new Dictionary<StateType, FSMState>();
+        public StateMachine() => _states = new Dictionary<StateType, IGameState>();
 
-        public void AddState(StateType type, FSMState state)
+        public void AddState(StateType type, IGameState state)
         {
             _states.Add(type, state);
         }
 
-        public void EnterState(StateType type)
+        public void ChangeState(StateType type)
         {
-            if (_states.TryGetValue(type, out FSMState state))
+            if (_states.TryGetValue(type, out IGameState state))
             {
                 CurrentState?.Exit();
                 CurrentState = state;
