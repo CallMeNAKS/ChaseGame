@@ -4,7 +4,40 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6500fbbc-7923-450a-83cc-17926596c4a9" name="Changes" comment="add resolve conflict" />
+    <list default="true" id="6500fbbc-7923-450a-83cc-17926596c4a9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/FSM.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/FSM.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/FSMState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/FSMState.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ChaseGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ChaseGame/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Bonus/Bonus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Bonus/Bonus.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/EntryPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/EntryPoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Player/PlayerMover.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Player/PlayerMover.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DEMO.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DEMO/Level.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DEMO/Level/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DEMO/Level/Materials/TestGrid.shadergraph" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DEMO/Level/Materials/TestGrid.shadergraph.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Readme.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Readme.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/ChaseArena.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/ChaseArena.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/ChaseArena/NavMesh.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/ChaseArena/NavMesh.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/ChaseArena/NavMesh.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/ChaseArena/NavMesh.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TutorialInfo.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TutorialInfo/Icons.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TutorialInfo/Icons/URP.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TutorialInfo/Icons/URP.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TutorialInfo/Layout.wlt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TutorialInfo/Layout.wlt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TutorialInfo/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TutorialInfo/Scripts/Editor.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TutorialInfo/Scripts/Readme.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TutorialInfo/Scripts/Readme.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/NavMeshAreas.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/NavMeshAreas.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,6 +74,7 @@
     <setting file="mock://F:/Lessons/ChaseGame/Assets/Plugins/Demigiant/DOTween/Editor.meta" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://F:/Lessons/ChaseGame/Assets/Resources/DOTweenSettings.asset" root0="SKIP_HIGHLIGHTING" />
   </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -52,19 +86,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Attach to Unity Editor.Attach to Unity Editor.executor": "Debug",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "dev",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Attach to Unity Editor.Attach to Unity Editor.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev-kirill&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="B:\Unity\2021.3.44f1\Editor\Unity.exe" />
@@ -113,12 +148,16 @@
       <updated>1733416743572</updated>
       <workItem from="1733416744659" duration="4822000" />
       <workItem from="1733761298436" duration="1930000" />
+      <workItem from="1733930031093" duration="2058000" />
+      <workItem from="1733975461943" duration="5819000" />
+      <workItem from="1733981401857" duration="265000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityProjectDiscoverer">
     <option name="hasUnityReference" value="true" />

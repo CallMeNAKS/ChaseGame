@@ -25,8 +25,8 @@ namespace CodeBase.Player
         {
             var direction = new Vector3(_input.Direction.x, 0, _input.Direction.y);
             var angle = Vector3.Angle(transform.forward, direction);
-
-            transform.rotation = Quaternion.AngleAxis(angle, Vector3.up);
+            
+            transform.Rotate(Vector3.up, angle);
             _characterController.Move(direction * Time.deltaTime * _moveSpeed);
         }
     }
