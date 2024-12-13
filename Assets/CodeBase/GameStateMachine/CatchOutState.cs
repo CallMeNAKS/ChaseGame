@@ -1,10 +1,9 @@
 using System.Collections;
 using CodeBase.Enemy;
-using CodeBase.GameStateMachine;
 using CodeBase.Utils;
 using UnityEngine;
 
-namespace CodeBase
+namespace CodeBase.GameStateMachine
 {
     public class CatchOutState : IGameState
     {
