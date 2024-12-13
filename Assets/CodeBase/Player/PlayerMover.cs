@@ -10,6 +10,7 @@ namespace CodeBase.Player
         private IInputHandler _input;
         
         [SerializeField] private float _moveSpeed = 10f;
+        [SerializeField] private Animator _animator;
 
         private void Awake()
         {
