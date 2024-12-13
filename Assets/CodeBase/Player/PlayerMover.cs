@@ -29,6 +29,7 @@ namespace CodeBase.Player
             
             transform.Rotate(Vector3.up, angle);
             _characterController.Move(direction * Time.deltaTime * _moveSpeed);
+            _animator.SetFloat("Speed", _characterController.velocity.magnitude);
         }
     }
 }
