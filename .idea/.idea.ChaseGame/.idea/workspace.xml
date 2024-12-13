@@ -4,6 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+    <list default="true" id="6500fbbc-7923-450a-83cc-17926596c4a9" name="Changes" comment="add resolve conflict" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,7 +31,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Attach to Unity Editor.Attach to Unity Editor.executor": "Debug",
-    "git-widget-placeholder": "dev-egor",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "dev",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
