@@ -9,6 +9,8 @@ namespace CodeBase.Generics
         private Team _team;
         private Coroutine _damageCoroutine;
         private Collider _targetCollider;
+        
+        public bool IsActive { get; set; }
 
 
         private void Awake()
@@ -18,6 +20,8 @@ namespace CodeBase.Generics
 
         private void OnTriggerEnter(Collider other)
         {
+            if (!IsActive) return;
+            
             if (other.TryGetComponent<Health>(out var health) && other.GetComponent<ITeamable>()?.Team != _team)
             {
                 _targetCollider = other;

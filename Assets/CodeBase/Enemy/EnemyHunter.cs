@@ -16,6 +16,7 @@ public class EnemyHunter : MonoBehaviour, ITeamable
     private void Awake()
     {
         _navMeshAgent = GetComponent<NavMeshAgent>();
+        _attackBehavior.IsActive = true;
     }
 
     private void Update()
@@ -51,6 +52,6 @@ public class EnemyHunter : MonoBehaviour, ITeamable
     public void ToggleState()
     {
         _isCatching = !_isCatching;
-        _attackBehavior.enabled = !_attackBehavior.enabled;
+        _attackBehavior.IsActive = !_attackBehavior.IsActive;
     }
 }

@@ -10,6 +10,7 @@ namespace CodeBase.Player
         private IInputHandler _input;
         
         [SerializeField] private float _moveSpeed = 10f;
+        [SerializeField] private Animator _animator;
 
         private void Awake()
         {
@@ -28,6 +29,7 @@ namespace CodeBase.Player
             
             transform.Rotate(Vector3.up, angle);
             _characterController.Move(direction * Time.deltaTime * _moveSpeed);
+            _animator.SetFloat("Speed", _characterController.velocity.magnitude);
         }
     }
 }

@@ -1,5 +1,4 @@
-﻿using System;
-using CodeBase.Generics;
+﻿using CodeBase.Generics;
 using UnityEngine;
 
 namespace CodeBase.Player
@@ -12,12 +11,12 @@ namespace CodeBase.Player
 
         private void Awake()
         {
-            _attackBehavior.enabled = false;
+            _attackBehavior.IsActive = false;
         }
 
         public void ToggleState()
         {
-            _attackBehavior.enabled = !_attackBehavior.enabled;
+            _attackBehavior.IsActive = !_attackBehavior.IsActive;
         }
     }
 }

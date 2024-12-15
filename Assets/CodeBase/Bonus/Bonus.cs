@@ -1,33 +1,26 @@
 ﻿using System;
-using System.Collections;
 using UnityEngine;
 
 namespace CodeBase.Bonus
 {
     public class Bonus : MonoBehaviour
     {
-        public event Action<bool> OnChangeBonusState;
-        [SerializeField] private Player.Player _player;
-        [SerializeField] private EnemyHunter _enemy;
-        
+        public event Action BonusTaked;
+
+
         private void OnTriggerEnter(Collider other)
         {
             if (other.TryGetComponent<Player.Player>(out var player))
             {
-                _player.ToggleState();
-                _enemy.ToggleState();
-                // gameObject.SetActive(false);
-                StartCoroutine(BonusTimer());
+                BonusTaked?.Invoke();
+                
+                gameObject.SetActive(false);
             }
         }
 
-        private IEnumerator BonusTimer()
+        public void Spawn()
         {
-            OnChangeBonusState?.Invoke(false); //бонус исчез
-            yield return new WaitForSeconds(10f);
-            OnChangeBonusState?.Invoke(true); //бонус появился
-            _player.ToggleState();
-            _enemy.ToggleState();
+            gameObject.SetActive(true);
         }
     }
 }
