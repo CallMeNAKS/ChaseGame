@@ -1,3 +1,4 @@
+using CodeBase.Enemy;
 using CodeBase.Generics;
 using UnityEngine;
 using UnityEngine.AI;
@@ -6,6 +7,7 @@ using UnityEngine.AI;
 public class EnemyHunter : MonoBehaviour, ITeamable
 {
     [SerializeField] private AttackBehavior _attackBehavior;
+    [SerializeField] private EnemyPathFinder _pathFinder;
     [SerializeField] private Transform _playerTransform;
     private NavMeshAgent _navMeshAgent;
     private bool _isCatching = true;
@@ -27,13 +29,9 @@ public class EnemyHunter : MonoBehaviour, ITeamable
     private void Move()
     {
         if (_isCatching)
-        {
             RunOnPlayer();
-        }
         else
-        {
             RunAwayFromPlayer();
-        }
     }
 
     private void RunOnPlayer()
@@ -45,8 +43,7 @@ public class EnemyHunter : MonoBehaviour, ITeamable
     private void RunAwayFromPlayer()
     {
         _navMeshAgent.ResetPath();
-        var direction = transform.position - _playerTransform.position;
-        _navMeshAgent.Move(direction * Time.deltaTime);
+        _navMeshAgent.SetDestination(_pathFinder.FindPath(_playerTransform));
     }
 
     public void ToggleState()

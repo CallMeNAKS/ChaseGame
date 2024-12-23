@@ -11,7 +11,7 @@ namespace CodeBase.GameStateMachine
         private readonly StateMachine _stateMachine;
         private readonly Bonus.Bonus _bonus;
         private readonly Player.Player _player;
-        private readonly EnemyBehavior _enemyBehavior;
+        private readonly EnemiesBehavior _enemiesBehavior;
 
         private const float BONUS_DURATION = 10f;
 
@@ -20,27 +20,27 @@ namespace CodeBase.GameStateMachine
             Bonus.Bonus bonus,
             Coroutines coroutines,
             Player.Player player,
-            EnemyBehavior enemyBehavior)
+            EnemiesBehavior enemiesBehavior)
         {
             _stateMachine = stateMachine;
             _bonus = bonus;
             _coroutines = coroutines;
             _player = player;
-            _enemyBehavior = enemyBehavior;
+            _enemiesBehavior = enemiesBehavior;
         }
 
         public void Enter()
         {
             _coroutines.StartCoroutine(StateTimer());
             _player.ToggleState();
-            _enemyBehavior.ChangeBehavior();
+            _enemiesBehavior.ChangeBehavior();
         }
 
         public void Exit()
         {
             _bonus.Spawn();
             _player.ToggleState();
-            _enemyBehavior.ChangeBehavior();
+            _enemiesBehavior.ChangeBehavior();
         }
 
         private IEnumerator StateTimer()

@@ -17,7 +17,7 @@ namespace CodeBase.Infrastructure
         private KeyboardInput _keyboardInput;
         private StateMachine _stateMachine;
         private Coroutines _coroutines;
-        private EnemyBehavior _enemyBehavior;
+        private EnemiesBehavior _enemiesBehavior;
 
         private void Awake()
         {
@@ -44,14 +44,14 @@ namespace CodeBase.Infrastructure
                 new CatchOutState(_stateMachine,
                     _bonus, _coroutines,
                     _playerMover.GetComponent<Player.Player>(),
-                    _enemyBehavior));
+                    _enemiesBehavior));
         }
 
         private void RegistrationServices()
         {
             _keyboardInput = new KeyboardInput();
             _stateMachine = new StateMachine();
-            _enemyBehavior = new EnemyBehavior(_hunters);
+            _enemiesBehavior = new EnemiesBehavior(_hunters);
             _coroutines = new GameObject("Coroutines").AddComponent<Coroutines>();
         }
     }

@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace CodeBase
+namespace CodeBase.Generics
 {
     public class Health : MonoBehaviour
     {
@@ -18,12 +18,12 @@ namespace CodeBase
 
         private void OnHited(int _)
         {
-            print("Health " + _health);
+            // print("Health " + _health);
         }
 
         private void OnDeath()
         {
-            print("Death");
+            // print("Death");
         }
         
         public void TakeDamage(int damage)

@@ -1,14 +1,8 @@
 ﻿using System.Collections.Generic;
-using UnityEngine;
+
 
 namespace CodeBase.GameStateMachine
 {
-    public enum StateType
-    {
-        Chase,
-        CatchOut
-    }
-
     public class StateMachine
     {
         private IGameState CurrentState { get; set; }
@@ -32,7 +26,6 @@ namespace CodeBase.GameStateMachine
 
                 return;
             }
-            Debug.LogError("Такого состояния нет!");
         }
     }
 }
